@@ -13,6 +13,8 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="min-h-screen relative overflow-hidden">
+        <GlobeContainer />
+        
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px] animate-pulse" />
@@ -20,12 +22,9 @@ const Index = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-pink-500/20 rounded-full blur-[120px] animate-pulse delay-1000" />
         </div>
 
-        {/* Globe Container */}
-        <div className="absolute inset-0 z-10">
-          <GlobeContainer />
-        </div>
+        {/* Animated grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] animate-[pulse_4s_ease-in-out_infinite]" />
 
-        {/* Content */}
         <div className="relative z-20 h-full flex items-center justify-center text-center pt-20">
           <div className="container mx-auto px-4">
             <motion.div
