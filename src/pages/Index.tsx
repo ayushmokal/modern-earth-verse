@@ -4,7 +4,7 @@ import { VideoGallery } from '@/components/VideoGallery';
 import { ClientLogos } from '@/components/ClientLogos';
 import { Footer } from '@/components/Footer';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import { GlobeContainer } from '@/components/GlobeContainer';
+import GlobeContainer from '@/components/GlobeContainer';
 
 const Index = () => {
   return (
