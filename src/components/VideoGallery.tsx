@@ -115,15 +115,21 @@ export const VideoGallery = () => {
         </div>
       </div>
 
-      {/* Bottom marquee - moving in opposite direction */}
+      {/* Bottom marquee - moving in opposite direction with alternating text */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
         <div className="marquee relative flex whitespace-nowrap">
           {[...Array(3)].map((_, i) => (
             <div key={`bottom-${i}`} className="flex items-center space-x-4 mx-4 rotate-180">
               <Sparkles className="w-8 h-8 text-purple-500/50 animate-pulse" />
-              <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-400 opacity-80 glow">
-                WEB3 AGENCY
-              </span>
+              {i % 2 === 0 ? (
+                <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-400 opacity-80 glow">
+                  WEB3 AGENCY
+                </span>
+              ) : (
+                <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-400 opacity-80 glow">
+                  DIGITAL INNOVATION
+                </span>
+              )}
               <ArrowRight className="w-8 h-8 text-purple-500/50" />
             </div>
           ))}
