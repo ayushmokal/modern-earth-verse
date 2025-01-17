@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Play, ArrowRight } from "lucide-react";
+import { Play, ArrowRight, Sparkles } from "lucide-react";
 
 const videos = [
   {
@@ -30,11 +30,14 @@ export const VideoGallery = () => {
     <section className="py-32 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-purple-900/10" />
+      
+      {/* Top marquee */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">
         <div className="marquee relative flex whitespace-nowrap">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="flex items-center space-x-4 mx-4">
-              <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 opacity-50">
+            <div key={`top-${i}`} className="flex items-center space-x-4 mx-4">
+              <Sparkles className="w-8 h-8 text-purple-500/50 animate-pulse" />
+              <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 opacity-80 glow">
                 VIDEO CAMPAIGNS
               </span>
               <ArrowRight className="w-8 h-8 text-purple-500/50" />
@@ -112,8 +115,23 @@ export const VideoGallery = () => {
         </div>
       </div>
 
-      {/* Decorative elements */}
-      {[...Array(5)].map((_, i) => (
+      {/* Bottom marquee - moving in opposite direction */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
+        <div className="marquee relative flex whitespace-nowrap">
+          {[...Array(3)].map((_, i) => (
+            <div key={`bottom-${i}`} className="flex items-center space-x-4 mx-4 rotate-180">
+              <Sparkles className="w-8 h-8 text-purple-500/50 animate-pulse" />
+              <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-400 opacity-80 glow">
+                WEB3 AGENCY
+              </span>
+              <ArrowRight className="w-8 h-8 text-purple-500/50" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Enhanced decorative elements */}
+      {[...Array(8)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute w-2 h-2 bg-primary/30 rounded-full"
@@ -125,6 +143,7 @@ export const VideoGallery = () => {
             y: [0, -20, 0],
             opacity: [0.5, 1, 0.5],
             scale: [1, 1.5, 1],
+            rotate: [0, 180, 360],
           }}
           transition={{
             duration: 2 + i,
