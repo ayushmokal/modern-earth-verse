@@ -8,7 +8,6 @@ const GlobeContainer = () => {
     <div className="absolute inset-0 -z-10">
       <Canvas 
         camera={{ position: [0, 0, 2.5], fov: 45 }}
-        gl={{ preserveDrawingBuffer: true }}
         style={{ background: 'transparent' }}
       >
         <color attach="background" args={['transparent']} />
