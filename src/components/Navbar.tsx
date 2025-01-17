@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
+import { Star } from "lucide-react";
 
 export const Navbar = () => {
   return (
@@ -12,9 +13,12 @@ export const Navbar = () => {
         <div className="backdrop-blur-xl bg-background/30 rounded-full border border-white/5 px-6 py-4 flex items-center justify-between">
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-400"
+            className="flex items-center space-x-1"
           >
-            CLYPTO
+            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#C5B4E3] to-[#A594D3]">
+              CLYPTO
+            </span>
+            <Star className="w-4 h-4 text-primary animate-pulse" fill="currentColor" />
           </motion.div>
           
           <div className="hidden md:flex items-center space-x-8">
