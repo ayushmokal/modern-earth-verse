@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/be2e49ec-a830-49a0-b513-bc5aa9b59c43
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
 ## How can I edit this code?
 
@@ -10,7 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/be2e49ec-a830-49a0-b513-bc5aa9b59c43) and start prompting.
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -52,17 +52,17 @@ npm run dev
 
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with React, TypeScript, Tailwind CSS, Three.js, and Framer Motion for a modern web3 agency website with stunning 3D visualizations and smooth animations.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- React with TypeScript for robust development
+- Tailwind CSS for responsive styling
+- Three.js for 3D Earth visualization
+- Framer Motion for premium animations
+- ShadcnUI for consistent UI components
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/be2e49ec-a830-49a0-b513-bc5aa9b59c43) and click on Share -> Publish.
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
 ## I want to use a custom domain - is that possible?
 
