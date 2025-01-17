@@ -12,6 +12,7 @@ const Globe = () => {
     textureLoader.load(
       '/earth-texture.jpg',
       (loadedTexture) => {
+        loadedTexture.encoding = THREE.sRGBEncoding;
         setTexture(loadedTexture);
       },
       undefined,
@@ -41,10 +42,11 @@ const Globe = () => {
     <Sphere ref={meshRef} args={[1, 64, 64]}>
       <meshStandardMaterial
         map={texture}
-        metalness={0.4}
-        roughness={0.7}
-        emissive="#150033"
-        emissiveIntensity={0.2}
+        metalness={0.2}
+        roughness={0.8}
+        emissive="#ffffff"
+        emissiveMap={texture}
+        emissiveIntensity={0.8}
       />
     </Sphere>
   );
