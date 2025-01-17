@@ -1,60 +1,46 @@
 import { motion } from "framer-motion";
-import { Play, ArrowRight, Sparkles, Code2, Laptop, Blocks } from "lucide-react";
+import { Play, ArrowRight, Sparkles } from "lucide-react";
 
 const videos = [
   {
     id: 1,
-    title: "Web3 Development",
-    description: "Full-stack web3 development for smart contracts",
+    title: "WhatsApp 'Good Mornings'",
     duration: "01:20",
     thumbnail: "/lovable-uploads/fbb2eccf-3d33-466b-8b2c-eb151d2ee6bd.png",
-    category: "Blockchain"
+    category: "Social Media"
   },
   {
     id: 2,
-    title: "DeFi Platform",
-    description: "Decentralized finance platform with seamless UX",
-    duration: "02:15",
+    title: "Kitchen Organisation",
+    duration: "00:21",
     thumbnail: "/video-thumb-2.jpg",
-    category: "DeFi"
+    category: "Brand Story"
   },
   {
     id: 3,
-    title: "NFT Marketplace",
-    description: "Custom NFT marketplace with advanced features",
-    duration: "03:42",
+    title: "3Soul: True To You",
+    duration: "02:42",
     thumbnail: "/video-thumb-3.jpg",
-    category: "NFT"
-  },
-  {
-    id: 4,
-    title: "Smart Contract Audit",
-    description: "Security audit and optimization services",
-    duration: "01:55",
-    thumbnail: "/video-thumb-4.jpg",
-    category: "Security"
+    category: "Web3 Campaign"
   }
 ];
 
 export const VideoGallery = () => {
   return (
-    <section className="py-32 relative overflow-hidden bg-black/90">
-      {/* Background gradients */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-500/10 rounded-full blur-[120px] animate-pulse delay-700" />
-      </div>
+    <section className="py-32 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-purple-900/10" />
       
       {/* Top marquee */}
       <div className="absolute top-0 left-0 w-full overflow-hidden">
         <div className="marquee relative flex whitespace-nowrap">
           {[...Array(3)].map((_, i) => (
             <div key={`top-${i}`} className="flex items-center space-x-4 mx-4">
-              <Code2 className="w-8 h-8 text-orange-500/80 animate-pulse" />
-              <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 opacity-90 glow">
-                CRAFTING WEB3
+              <Sparkles className="w-8 h-8 text-purple-500/50 animate-pulse" />
+              <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600 opacity-80 glow">
+                VIDEO CAMPAIGNS
               </span>
-              <ArrowRight className="w-8 h-8 text-orange-500/80" />
+              <ArrowRight className="w-8 h-8 text-purple-500/50" />
             </div>
           ))}
         </div>
@@ -73,18 +59,18 @@ export const VideoGallery = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600 animate-gradient">
-                Selected Works
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#C5B4E3] to-[#A594D3] animate-gradient">
+                Video Campaigns
               </span>
-              <div className="absolute -inset-1 bg-orange-500/20 rounded-lg blur-xl animate-pulse" />
+              <div className="absolute -inset-1 bg-primary/20 rounded-lg blur-xl animate-pulse" />
             </motion.h2>
-            <p className="text-xl text-gray-400 mt-4">
-              Transforming ideas into digital reality
+            <p className="text-xl text-muted-foreground mt-4">
+              Crafting Web3 Stories That Resonate
             </p>
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((video, index) => (
             <motion.div
               key={video.id}
@@ -94,56 +80,61 @@ export const VideoGallery = () => {
               whileHover={{ scale: 1.02, y: -5 }}
               className="group"
             >
-              <div className="relative rounded-xl overflow-hidden glass-panel border border-white/10">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative rounded-2xl overflow-hidden glass-panel">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img 
                   src={video.thumbnail} 
                   alt={video.title}
-                  className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div 
+                      className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center backdrop-blur-sm"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <Play className="w-6 h-6 text-white" />
+                    </motion.div>
+                  </div>
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-orange-500/20 text-orange-400 mb-3 backdrop-blur-sm">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary mb-2 backdrop-blur-sm">
                       {video.category}
                     </span>
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-orange-400 transition-colors">
-                      {video.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mb-4">
-                      {video.description}
-                    </p>
-                    <div className="flex items-center space-x-2 text-gray-400">
-                      <Play className="w-4 h-4" />
-                      <span className="text-sm">{video.duration}</span>
-                    </div>
+                    <p className="text-sm font-medium text-white/80">{video.duration}</p>
                   </div>
                 </div>
+              </div>
+              <div className="mt-4 space-y-2">
+                <h3 className="text-xl font-medium group-hover:text-primary transition-colors">
+                  {video.title}
+                </h3>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Bottom marquee */}
+      {/* Bottom marquee - moving in opposite direction */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden rotate-180">
         <div className="marquee relative flex whitespace-nowrap">
           {[...Array(3)].map((_, i) => (
             <div key={`bottom-${i}`} className="flex items-center space-x-4 mx-4 rotate-180">
-              <Blocks className="w-8 h-8 text-orange-500/80 animate-pulse" />
-              <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 opacity-90 glow">
-                DIGITAL THINGS
+              <Sparkles className="w-8 h-8 text-purple-500/50 animate-pulse" />
+              <span className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-purple-400 opacity-80 glow">
+                WEB3 AGENCY
               </span>
-              <ArrowRight className="w-8 h-8 text-orange-500/80" />
+              <ArrowRight className="w-8 h-8 text-purple-500/50" />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Floating elements */}
-      {[...Array(10)].map((_, i) => (
+      {/* Enhanced decorative elements */}
+      {[...Array(8)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-2 h-2 bg-orange-500/30 rounded-full"
+          className="absolute w-2 h-2 bg-primary/30 rounded-full"
           style={{
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
