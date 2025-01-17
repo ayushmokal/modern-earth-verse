@@ -1,7 +1,4 @@
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
-import { Earth } from '@/components/Earth';
 import { Navbar } from '@/components/Navbar';
 import { VideoGallery } from '@/components/VideoGallery';
 import { ClientLogos } from '@/components/ClientLogos';
@@ -13,21 +10,6 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="h-screen relative overflow-hidden">
-        <div className="absolute inset-0 z-10">
-          <Canvas>
-            <PerspectiveCamera makeDefault position={[0, 0, 4]} />
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} />
-            <Earth />
-            <OrbitControls 
-              enableZoom={false}
-              enablePan={false}
-              rotateSpeed={0.5}
-              autoRotate
-            />
-          </Canvas>
-        </div>
-
         <div className="relative z-20 h-full flex items-center justify-center text-center">
           <div className="container mx-auto px-4">
             <motion.div
