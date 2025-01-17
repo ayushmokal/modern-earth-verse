@@ -45,6 +45,23 @@
   @apply backdrop-blur-md bg-black/30 border border-white/10;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s linear infinite;
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -72,5 +89,33 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+/* Glow effect */
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--primary), 0 0 40px var(--primary);
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px var(--primary), 0 0 40px var(--primary), 0 0 50px var(--primary);
+  }
+}
+
+/* Crazy rotation */
+.rotate-crazy {
+  animation: rotate-crazy 20s linear infinite;
+}
+
+@keyframes rotate-crazy {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
