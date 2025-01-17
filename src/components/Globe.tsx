@@ -9,11 +9,15 @@ const Globe = () => {
   
   useEffect(() => {
     const textureLoader = new THREE.TextureLoader();
+    let isSubscribed = true;
+
     textureLoader.load(
       '/earth-texture.jpg',
       (loadedTexture) => {
-        loadedTexture.colorSpace = THREE.SRGBColorSpace;
-        setTexture(loadedTexture);
+        if (isSubscribed) {
+          loadedTexture.colorSpace = THREE.SRGBColorSpace;
+          setTexture(loadedTexture);
+        }
       },
       undefined,
       (error) => {
@@ -22,6 +26,7 @@ const Globe = () => {
     );
 
     return () => {
+      isSubscribed = false;
       if (texture) {
         texture.dispose();
       }

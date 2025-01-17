@@ -9,7 +9,9 @@ const GlobeContainer = () => {
       <Canvas 
         camera={{ position: [0, 0, 2.5], fov: 45 }}
         gl={{ preserveDrawingBuffer: true }}
+        style={{ background: 'transparent' }}
       >
+        <color attach="background" args={['transparent']} />
         <Suspense fallback={null}>
           <ambientLight intensity={0.1} />
           <pointLight position={[10, 10, 10]} intensity={1} />
@@ -22,6 +24,8 @@ const GlobeContainer = () => {
             enablePan={false}
             minPolarAngle={Math.PI / 2}
             maxPolarAngle={Math.PI / 2}
+            autoRotate
+            autoRotateSpeed={0.5}
           />
         </Suspense>
       </Canvas>
