@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
 import { VideoGallery } from '@/components/VideoGallery';
 import { ClientLogos } from '@/components/ClientLogos';
+import { Footer } from '@/components/Footer';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Index = () => {
@@ -126,6 +127,7 @@ const Index = () => {
 
       <VideoGallery />
       <ClientLogos />
+      <Footer />
     </div>
   );
 };
