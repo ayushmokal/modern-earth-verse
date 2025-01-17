@@ -44,7 +44,8 @@ const Globe = () => {
   }
 
   return (
-    <Sphere ref={meshRef} args={[1, 64, 64]}>
+    <mesh ref={meshRef}>
+      <sphereGeometry args={[1, 64, 64]} />
       <meshStandardMaterial
         map={texture}
         metalness={0.2}
@@ -53,7 +54,7 @@ const Globe = () => {
         emissiveMap={texture}
         emissiveIntensity={0.8}
       />
-    </Sphere>
+    </mesh>
   );
 };
 
