@@ -4,7 +4,6 @@ import { VideoGallery } from '@/components/VideoGallery';
 import { ClientLogos } from '@/components/ClientLogos';
 import { Footer } from '@/components/Footer';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import GlobeContainer from '@/components/GlobeContainer';
 
 const Index = () => {
   return (
@@ -13,8 +12,6 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="min-h-screen relative overflow-hidden">
-        <GlobeContainer />
-        
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px] animate-pulse" />
